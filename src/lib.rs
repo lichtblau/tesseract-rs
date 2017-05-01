@@ -33,6 +33,9 @@ impl Tesseract {
 		let cs_language = cs(language);
 		unsafe { TessBaseAPIInit3(self.raw, ptr::null(), cs_language.as_ptr()) }
 	}
+	pub fn set_page_seg_mode(&self, mode: TessPageSegMode) {
+		unsafe { TessBaseAPISetPageSegMode(self.raw, mode) }
+	}
 	pub fn set_image(&self, filename: &str) {
 		let cs_filename = cs(filename);
 		unsafe {
