@@ -58,6 +58,11 @@ impl Tesseract {
 			str::from_utf8(CStr::from_ptr(TessBaseAPIGetUTF8Text(self.raw)).to_bytes()).unwrap()
 		}
 	}
+	pub fn get_hocr_text(&self, page: i32) -> &str {
+		unsafe {
+			str::from_utf8(CStr::from_ptr(TessBaseAPIGetHOCRText(self.raw, page)).to_bytes()).unwrap()
+		}
+	}
 }
 
 pub fn ocr(filename: &str, language: &str) -> String {
