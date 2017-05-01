@@ -1,6 +1,6 @@
 [package]
 name = "tesseract"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Kevin Kwok <antimatter15@gmail.com>"]
 description = """
 Higher-level bindings for Tesseract OCR
@@ -11,5 +11,5 @@ license = "MIT"
 libc = "0.1"
 
 [dependencies.tesseract-sys]
-version = "0.1.1"
+version = "0.1.2"
 path = "tesseract-sys"
